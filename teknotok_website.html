@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TEKNOTOK - Edukasi, berita teknologi, dan review gadget terbaru">
+  <title>TEKNOTOK | Teknologi & Gadget</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background: #0f172a;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background: #1e293b;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 15px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      background: #0f172a;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+    .dark-mode {
+      background: #0f172a;
+      color: #ddd;
+    }
+    .dark-mode .card {
+      background: #1e293b;
+      color: #ddd;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: #e2e8f0;
+    }
+    .top-bar input {
+      padding: 5px 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .dark-mode .top-bar {
+      background: #1e293b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TEKNOTOK</h1>
+    <p>Edukasi, Berita Teknologi, dan Review Gadget Terbaru</p>
+  </header>
+
+  <div class="top-bar">
+    <button id="toggleDarkMode">🌙 Dark Mode</button>
+    <input type="text" id="searchBox" placeholder="Cari artikel...">
+  </div>
+
+  <nav>
+    <a href="#berita">Berita</a>
+    <a href="#edukasi">Edukasi</a>
+    <a href="#review">Review Gadget</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <div class="container" id="contentContainer">
+    <section id="berita">
+      <h2>Berita Teknologi Terbaru</h2>
+      <div class="card">
+        <h3>AI Generasi Baru Hadir di 2025</h3>
+        <p>Kecerdasan buatan semakin berkembang pesat. Kini hadir AI yang mampu memahami emosi manusia lebih baik...</p>
+      </div>
+      <div class="card">
+        <h3>iPhone 7 Masih Layak di 2025?</h3>
+        <p>Meski sudah lama dirilis, iPhone 7 ternyata masih bisa digunakan dengan beberapa trik optimasi...</p>
+      </div>
+    </section>
+
+    <section id="edukasi">
+      <h2>Edukasi Teknologi</h2>
+      <div class="card">
+        <h3>5 Tips Merawat Gadget Agar Awet</h3>
+        <p>Dari cara charge yang benar hingga membersihkan perangkat, berikut tips merawat gadget agar tahan lama...</p>
+      </div>
+      <div class="card">
+        <h3>Memahami Cara Kerja Blockchain</h3>
+        <p>Blockchain bukan hanya soal kripto, tapi juga masa depan keamanan data dan transaksi digital...</p>
+      </div>
+    </section>
+
+    <section id="review">
+      <h2>Review Gadget</h2>
+      <div class="card">
+        <h3>Review Samsung Galaxy S25 Ultra</h3>
+        <p>Layar super cerah, kamera canggih, dan performa luar biasa. Apakah layak upgrade? Temukan jawabannya...</p>
+      </div>
+      <div class="card">
+        <h3>Review MacBook Air M4</h3>
+        <p>Chipset terbaru Apple membawa performa lebih hemat daya. Cocok untuk siapa? Baca review lengkapnya...</p>
+      </div>
+    </section>
+
+    <section id="kontak">
+      <h2>Kontak & Kolaborasi</h2>
+      <div class="card">
+        <p>Ingin berkolaborasi atau mengirim berita? Hubungi kami di <strong>teknotok@info.com</strong></p>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 TEKNOTOK. Semua Hak Dilindungi.</p>
+  </footer>
+
+  <script>
+    // Toggle Dark Mode
+    const toggleButton = document.getElementById('toggleDarkMode');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+
+    // Search Filter
+    const searchBox = document.getElementById('searchBox');
+    searchBox.addEventListener('input', () => {
+      const keyword = searchBox.value.toLowerCase();
+      document.querySelectorAll('.card').forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = text.includes(keyword) ? 'block' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>
